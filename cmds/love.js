@@ -10,6 +10,8 @@ module.exports = {
     description: "Calcula a afinidade amorosa que você tem por outra pessoa.",
     usage: "[menção | id | username]",
     run: async (client, message, args) => {
+        // Deleta o comando, pra não poluir o chat
+        message.delete();
         // Get a member from mention, id, or username
         let person = getMember(message, args[0]);
 
