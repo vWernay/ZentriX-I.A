@@ -319,8 +319,23 @@ client.on("message", msg => {
 });
 
 client.on('message', message=> {
-  if (message.isMentioned('626582629591810080')) {
-    message.reply(`Olá <@${message.author.id}>, no momento o **victorBOY** não está, ou está configurando algo no servidor. Se for algo relacionado a **bug**, **denúncia**, **sugestão** e **etc...**, peço por favor para que se direcione aos **canais adequados**.`);
+  if((message.cleanContent.startsWith("@" + client.user.username) || message.channel.id == '667494569381986315') && client.user.id != message.author.id) {
+    message.reply(`Olá <@${message.author.id}>, no momento o **victorBOY** não está, ou está configurando algo no servidor. se for algo relacionado ao Servidor ZentriX RP. Seja bug, denúncia, sugestão etc, peço por favor para que se direcione aos **canais adequados.**
+
+    **Sugestões:** <#612650573325533200>
+    **Dúvidas:** <#612650778871595074>
+    **Denúncias:** <#666398791171047475>
+    
+    Se for algo onde não se encaixe nestes exemplos, peço que procure outro **Staff** ou espere até que ele volte.
+    
+    Realizou um **Donate** em nosso Servidor? as plataformas encontradas no site https://five-m.store/loja/zentrixrp são de ativação automática.
+    Caso queira conhecer os benefícios **VIPS** vá no site e clique em **Ver Detalhes**, para uma pequena explicação acesse essa sala <#615963076847599636>.
+    
+    Caso seja algo **particular**, onde deve ser tratado diretamente com o **victorBOY**, peço que espere até ele ler está mensagem, já deixei anotado para ele.
+    
+    **Obrigado pela atenção e tenha um bom jogo!**
+    
+    ATT: **ZentriX** I.A`);
   }
 });
 
