@@ -10,7 +10,7 @@ module.exports = {
         message.delete();
         // In this array, 
         // you can put the subreddits you want to grab memes from
-        const subReddits = ["brasil", "brasil_drama", "brasilivre", "SouthAmericaMemes", "circojeca", "BrasilSimulator", "MEMEBRASIL"];
+        const subReddits = ["brasil", "brasilivre", "SouthAmericaMemes", "BrasilSimulator", "MEMEBRASIL"];
         // Grab a random property from the array
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 
