@@ -182,7 +182,12 @@ return Math.floor(Math.random() * (max - min)) + min;
 
 //initial start funtion
 client.on("ready", () => {
-  console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
+  console.log(`${timestamp} Logado como ${client.user.tag}!`);
+  console.log(`--------------------------------------------`);
+  console.log(`Bot foi iniciado com ${client.users.size} usuários, estou em ${client.channels.size} canais, e em ${client.guilds.size} servidores.`); 
+  console.log(`O bot está em funcionamento`);
+  console.log(`--------------------------------------------`);
+  client.channels.get('689889114660667436').send('Olá, acordei irei ficar de olho em todas mensagens que mandarem!')
   client.user.setPresence({ game: { name: `${client.users.size} membros no ZentriX RP`, type: 3, url: 'https://discord.gg/436xBCR'} });
     //0 = Jogando
     //  1 = Transmitindo
