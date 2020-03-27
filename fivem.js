@@ -256,6 +256,8 @@ client.on("message", async message => {
 // Respostas e anti-ping
 
 client.on("message", msg => {
+  
+  if (msg.author.bot) return;
 
   let wordArray = msg.content.split(" ");
   //console.log(wordArray);
