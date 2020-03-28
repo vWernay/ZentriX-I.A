@@ -34,12 +34,12 @@ global.sleep = require("system-sleep");
 global.createHash = require('hash-generator'); // horrible idea btw
 global.Fuse = require("fuse.js")
 global.colors = require("colors")
-​global.​got​ ​=​ ​require​(​'​got​'​);
-​global.ytdl ​=​ ​require​(​'​ytdl-core​'​);
 /* dumped from premium build */
 global.state = config.title;
 global.icon = `https://i.imgur.com/0xgjRjz.png`;
 
+const got = require('got');
+const ytdl = require('ytdl-core');
 const express = require('express');
 global.set = new Set();
 // User Config
