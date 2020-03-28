@@ -182,9 +182,8 @@ return Math.floor(Math.random() * (max - min)) + min;
   }
 });
 
-var​ time ​=​ ​new​ ​Date​();
-​var​ timestamp ​=​ ​'​[​'​ ​+​ ​time​.​getHours​() ​+​ ​'​:​'​ ​+​ ​time​.​getMinutes​() ​+​ ​'​:​'​ ​+​ ​time​.​getSeconds​() ​+​ ​'​]​'​;
-
+var time = new Date();
+var timestamp = '[' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ']';
 
 //initial start funtion
 client.on("ready", () => {
