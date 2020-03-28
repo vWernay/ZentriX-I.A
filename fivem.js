@@ -180,6 +180,10 @@ return Math.floor(Math.random() * (max - min)) + min;
   }
 });
 
+var​ time ​=​ ​new​ ​Date​();
+​var​ timestamp ​=​ ​'​[​'​ ​+​ ​time​.​getHours​() ​+​ ​'​:​'​ ​+​ ​time​.​getMinutes​() ​+​ ​'​:​'​ ​+​ ​time​.​getSeconds​() ​+​ ​'​]​'​;
+
+
 //initial start funtion
 client.on("ready", () => {
   console.log(`${timestamp} Logado como ${client.user.tag}!`);
