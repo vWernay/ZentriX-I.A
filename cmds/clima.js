@@ -1,4 +1,6 @@
 const Discord = module.require("discord.js")
+const moment = require('moment')
+moment.locale('pt-br')
 const weather = require("weather-js")
 
 module.exports.run = async (client, message, args) => {
@@ -40,5 +42,5 @@ module.exports.run = async (client, message, args) => {
     
     }
 module.exports.help = {
-    name: "weather"
+    name: "clima"
 }
