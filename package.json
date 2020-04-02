@@ -1,7 +1,7 @@
 {
   "name": "fivem",
-  "version": "0.0.1",
-  "description": "FiveM I.A Bot ",
+  "version": "0.0.2",
+  "description": "FiveM Bot ",
   "main": "fivem.js",
   "scripts": {
     "test": "nodemon fivem.js",
@@ -35,8 +35,11 @@
     "fs": "0.0.1-security",
     "fuse": "^0.4.0",
     "fuse.js": "^3.6.1",
+    "google": "^2.1.0",
+    "google-translate-api": "^2.3.0",
     "got": "^10.7.0",
     "hash-generator": "^0.1.0",
+    "jimp": "^0.10.0",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
     "npm": "^6.9.0",
