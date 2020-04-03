@@ -193,7 +193,7 @@ client.on("ready", () => {
   console.log(`O bot está em funcionamento`);
   console.log(`--------------------------------------------`);
   client.channels.get('689889114660667436').send('Olá, acordei irei ficar de olho em todas mensagens que mandarem!')
-  client.user.setPresence({ game: { name: `no ZentriX RP`, type: 3, url: 'https://discord.gg/436xBCR'} });
+  client.user.setPresence({ game: { name: `no ZentriX RP`, type: 0, url: 'https://discord.gg/436xBCR'} });
     //0 = Jogando
     //  1 = Transmitindo
     //  2 = Ouvindo
