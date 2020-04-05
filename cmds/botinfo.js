@@ -4,6 +4,10 @@
 
 const Discord = require('discord.js')
 const moment = require('moment')
+const m = require("moment-duration-format");
+let os = require('os')
+let cpuStat = require("cpu-stat")
+const ms = require("ms")
 
 moment.locale('pt-br')
 
@@ -16,10 +20,16 @@ module.exports = {
     let userName = client.user.username
     let servsize = client.guilds.size
     let usersize = client.users.size
+    let cpuLol;
     let status = {
       online: '`🟢` Online',
       offline: '`⚫` Offline'
     }
+   cpuStat.usagePercent(function(err, percent, seconds) {
+    if (err) {
+      return console.log(err);
+    }
+    const duration = moment.duration(client.uptime).format(" D [dias], H [horas], m [minutos], s [segundos]");
 
     let embed = new Discord.RichEmbed()
       .setColor(client.displayHexColor === '#000000' ? '#ffffff' : client.displayHexColor)
@@ -30,6 +40,8 @@ module.exports = {
       .addField('**Servidores**', `🛡 ${servsize}`, true)
       .addField('**Usuários**', `${usersize}`, inline)
       .addField('**Estou online a**', moment().to(client.startTime, true))
+      .addField("Uso de Memoria", `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB\``, true)           
+      .addField("Uso da CPU", `\`${percent.toFixed(2)} %\``, true)
       .addField('**Criado em**', formatDate('DD/MM/YYYY, às HH:mm:ss', date))
       .setFooter(`2020 © ${client.user.username}.`)
       .setTimestamp()
@@ -46,18 +58,8 @@ module.exports = {
     message.delete();
 
     message.channel.send(embed)
+   });
   },
-
-  conf: {},
-
-  get help () {
-    return {
-      name: 'botinfo',
-      category: 'Membro',
-      description: 'Mostra informações do bot.',
-      usage: `botinfo`
-    }
-  }
 }
 /**
  * Formata a data passada para o padrão do Brasil.
