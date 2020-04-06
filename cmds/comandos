@@ -1,0 +1,32 @@
+exports.run = async (client, message, args) => {
+    var util = require("../fivem");
+    message.delete();
+    let embed = new Discord.RichEmbed()
+    .setAuthor(state, icon)
+    .setColor(color)
+    .setDescription(`**FiveM Bot Comandos**`)
+    .addBlankField(true)
+    .addField(`${config.prefix}set <serverIP:port>`, "Seta o IP do server")
+    .addField(`${config.prefix}players`, "Lista de players on no server")
+    .addField(`${config.prefix}server`, "Pegar todas informações do server")
+    .addField(`${config.prefix}find <username>`, "Localiza um usuário que está no servidor via Nome de usuário")
+    .addField(`${config.prefix}id <id>`, "Localiza um usuário que está no servidor via Server ID")
+    .addField(`${config.prefix}status`, "Verifica se o servidor está online")
+    .addField(`${config.prefix}stats`, "Verifica as estatísticas do bot")
+    .addField(`${config.prefix}save-log <ID da pessoa>`, "Salva as informações de um jogador")
+    .addField(`${config.prefix}get-log`, "Obtém as informações de um jogador")
+    .addField(`${config.prefix}forum <topico>`, "Pesquisa os tópicos mais recentes nas categorias em https://forum.fivem.net")
+    .addField(`${config.prefix}forum `, "Verifica as categorias atuais em https://forum.fivem.net")
+    .addField(`${config.prefix}forum search <termos>`, "Pesquisa termos em https://forum.fivem.net")
+    .addField(`${config.prefix}forum user <username>`, "Pesquisa as informações do usuário em https://forum.fivem.net")
+    .addField(`${config.prefix}native <nativo>`, "retorna um nativo específico do GTAV que você pesquisou")
+    .addField(`${config.prefix}rcon help`, "Envia so comandos do RCON")
+    .addField(`${config.prefix}rcon set <rcon_password>`, "Define a senha do rcon")
+    .addField(`${config.prefix}rcon <rcon_command>`, "Executa um [Comando RCON](https://docs.fivem.net/server-manual/server-commands/)")
+    .addField("Donate to FiveM Bot's Hosting", "[Donate](https://paypal.me/zivinity)")
+    .addBlankField(true)
+    .setFooter("Copyright © victorBOY - https://github.com/vWernay/", icon)
+    log(`FiveM Comandos solicitado.. em ${message.guild.name}`)
+  
+    message.channel.send({embed: embed})
+};
