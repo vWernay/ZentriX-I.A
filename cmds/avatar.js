@@ -1,6 +1,6 @@
 const​ ​Discord​ ​=​ ​require​(​"​discord.js​"​);
 
-​module​.​exports​.​run​ ​=​ ​async​ (​client, ​message​, ​args​) ​=>​ {
+exports.run = async (client, message, args) => {
     ​let​ msg ​=​ ​await​ ​message​.​channel​.​send​(​"​Gerando avatar...​"​);
 
     ​let​ mentionedUser ​=​ ​message​.​mentions​.​users​.​first​() ​||​ ​message​.​author​;
