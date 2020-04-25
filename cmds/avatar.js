@@ -1,6 +1,15 @@
 const​ ​Discord​ ​=​ ​require​(​"​discord.js​"​);
 
-exports.run = async (client, message, args) => {
+module.exports = {
+ //var util = require("../fivem");
+    // Edit the message
+    name: "avatar",
+    aliases: ["av"],
+    category: "fun",
+    description: "Pega o avatar da pessoa mencionada.",
+    usage: "[menção]",
+    run: async (client, message, args) => {
+
     ​let​ msg ​=​ ​await​ ​message​.​channel​.​send​(​"​Gerando avatar...​"​);
 
     ​let​ mentionedUser ​=​ ​message​.​mentions​.​users​.​first​() ​||​ ​message​.​author​;
