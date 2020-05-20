@@ -353,7 +353,7 @@ client.on('message', message=> {
 
 client.on('messageDelete', async (message) => {
   const logs = message.guild.channels.find(channel => channel.name === "📓log-discord");
-  if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !📓logs) {
+  if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) {
     message.guild.createChannel('📓log-discord', 'text');
   }
   if (!message.guild.me.hasPermission('MANAGE_CHANNELS') && !logs) { 
