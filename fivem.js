@@ -361,11 +361,11 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
   .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
   .setThumbnail(oldMessage.author.avatarURL)
   .setColor("RANDOM")
-  .setDescription("Mensagem de uma pessoa que a editou")
+  .setDescription("LOG de Mensagens Editadas")
   .addField("Antes", oldMessage.content, true)
   .addField("Depois", newMessage.content, true)
   .setTimestamp()
-  .setFooter("Essa LOG foi feito por victorBOY#6632")
+  .setFooter("Esse LOG foi feito por victorBOY#6632.")
   
   let logginChannel = newMessage.guild.channels.find(ch => ch.name === "📓log-discord")
   if(!logginChannel) return;
