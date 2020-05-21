@@ -368,7 +368,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
   .setFooter("Essa LOG foi feito por victorBOY#6632")
   
   let logginChannel = newMessage.guild.channels.find(ch => ch.name === "📓log-discord")
-  if(!logginChannel) return:
+  if(!logginChannel) return;
   
   logginChannel.send(logEmbed);
 })
