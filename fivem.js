@@ -364,7 +364,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
   .setDescription("Mensagem de uma pessoa que a editou")
   .addField("Antes", oldMessage.content, true)
   .addField("Depois", newMessage.content, true)
-  .setTimeStamp()
+  .setTimestamp()
   .setFooter("Essa LOG foi feito por victorBOY#6632")
   
   let logginChannel = newMessage.guild.channels.find(ch => ch.name === "📓log-discord")
