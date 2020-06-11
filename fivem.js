@@ -271,8 +271,8 @@ client.on("message", msg => {
   let filterWordsRec = ["recrutamento?", "recrutamento"];
   let filterWordsTrabalho = ["trabalho dar?", "trabalho dar", "trabalho dar mais dinheiro?", "trabalho dar mais dinheiro"];
   let filterWordsLimite = ["limite?", "limite de membros?", "limite de membros por fac?", "limite", "limite de membros", "limite de membros por fac"];
-  let filterWordsNamo = ["namorado", "namorada", "namorado?", "namorada?", "namorada(o)", "namorado(a)", "namorada(o)?", "namorado(a)?" ]
-  let filterWordsGoogle = ["google", "siri", "google?", "siri?", "alexa", "alexa?" ]
+  let filterWordsNamo = ["namorado", "namorada", "namorado?", "namorada?", "namorada(o)", "namorado(a)", "namorada(o)?", "namorado(a)?" ];
+  let filterWordsGoogle = ["google", "siri", "google?", "siri?", "alexa", "alexa?" ];
   let filterWordsRecPm = ["recrutamento pm?", "recrutamento pm", "recrutamento polícia", "recrutamento policia", "edital", "edital pmzx", "edital pm", "edital policia", "edital polícia"]
 
   for(var i = 0; i < filterWordsWipe.length; i++) {
