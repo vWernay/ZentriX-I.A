@@ -361,6 +361,22 @@ client.on('message', message=> {
   }
 });
 
+client.on("messageDelete", async msg => {
+  let logs = await msg.guild.fetchAuditLogs({type: 72});
+  let entry = logs.entries.first();
+
+  let embed = new Discord.RichEmbed()
+    .setTitle("**MENSAGEM DELETADA**")
+    .setColor("#fc3c3c")
+    .setAuthor(msg.author.tag, msg.author.avatarURL)
+    .setDescription(`**Autor:** ${msg.author.tag}\n**Canal:** ${msg.channel}\n**Mensagem:** ${msg.content}\n**Executor**: ${entry.executor}`)
+    .setFooter(`ID da Mensagem: ${msg.id}\nID do Autor: ${msg.author.id}`)
+    .setThumbnail(msg.author.avatarURL)
+    .setTimestamp();
+  let delchannel = msg.guild.channels.find(x => x.name === '📓log-discord');
+  delchannel.send(embed);
+});
+
 client.on('messageUpdate', async (oldMessage, newMessage) => {
   if (oldMessage.content === newMessage.content){
     return;
