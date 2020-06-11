@@ -273,6 +273,7 @@ client.on("message", msg => {
   let filterWordsLimite = ["limite?", "limite de membros?", "limite de membros por fac?", "limite", "limite de membros", "limite de membros por fac"];
   let filterWordsNamo = ["namorado", "namorada", "namorado?", "namorada?", "namorada(o)", "namorado(a)", "namorada(o)?", "namorado(a)?" ]
   let filterWordsGoogle = ["google", "siri", "google?", "siri?", "alexa", "alexa?" ]
+  let filterWordsRecPm = ["recrutamento pm?", "recrutamento pm", "recrutamento polícia", "recrutamento policia", "edital", "edital pmzx", "edital pm", "edital policia", "edital polícia"]
 
   for(var i = 0; i < filterWordsWipe.length; i++) {
     if(wordArray.includes(filterWordsWipe[i])) {
@@ -327,6 +328,15 @@ client.on("message", msg => {
     }
     
   }
+
+  for(var i = 0; i < filterWordsRecPm.length; i++) {
+    if(wordArray.includes(filterWordsGoogle[i])) {
+      //msg.delete();
+      msg.channel.send(`<@${msg.author.id}>, O recrutamento da PMZX é realizado pelo @🚓| Comandante PMZX , verifique as Informações com e ou verifique o canal <#611289342761107476> .`);
+      break;
+    }
+    
+   }
 
 });
 
