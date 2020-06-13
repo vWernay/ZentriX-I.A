@@ -1,10 +1,7 @@
-// Comando para anunciar um evento no servidor, ou um restart.
-
-const Discord = require('discord.js');
-const commando = require('discord.js-commando');
-
-module.exports.run = async (client, message, args) => {
-
+const Discord = require("discord.js");
+exports.run = (client, message, args) => {
+        message.delete();
+    
         let role = message.mentions.roles.first();
         let msg = message.content;
         const adminPermissions = new Permissions('ADMINISTRATOR');
@@ -62,7 +59,7 @@ module.exports.run = async (client, message, args) => {
                 console.log(`--Falha ao enviar anúncio! ` + error)
             }
         }
-        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` + `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);   
+        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` + `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);    
 }
 
 function sleep(ms) {
