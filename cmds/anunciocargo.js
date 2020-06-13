@@ -1,25 +1,17 @@
 const Discord = require("discord.js");
-module.exports = {
- //var util = require("../fivem");
-    // Edit the message
-    name: "anunciocargo",
-    aliases: ["anun"],
-    category: "adm",
-    description: "Faz um anúncio com o cargo mencionado, usar quando tiver um evento no server.",
-    usage: "[menção | anuncio]",
-    run: async (client, message, args) => {
-    
+
+module.exports.run = async (client, message, args) => {
         let role = message.mentions.roles.first();
         let msg = message.content;
         const adminPermissions = new Permissions('ADMINISTRATOR');
 
         let botusr = dmGuild.members.find(o => o.id == this.client.user.id)
         if (!botusr.hasPermission(adminPermissions)) {
-            console.log(`AVISO: O BOT não está com o cargo de administrador setado.`);
+            console.log(`WARNING: Bot is not properly configured with administrative permissions.`);
         }
 
         if(!role) {
-            message.author.send("Cargo mencionado inválido!");
+            message.author.send("No valid role mentioned!");
             return;
         }
 
@@ -32,8 +24,8 @@ module.exports = {
 
         if(!msg || msg.length <= 1) {
             const embed = new Discord.RichEmbed()
-                .addField(":x: Falha ao enviar", "Mensagem não específicada.")
-                .addField(":eyes: Só vai!", "Todas letras que ficarão após a menção do cargo, será enviada.");
+                .addField(":x: Failed to send", "Message not specified")
+                .addField(":eyes: Listen up!", "Every character past the role mention will be sent,\nand apparently there was nothing to send.");
             message.channel.send({ embed: embed });
             return;
         }
@@ -43,11 +35,11 @@ module.exports = {
         let membercount = memberarray.length;
         let botcount = 0;
         let successcount = 0;
-        console.log(`Respondendo ${message.author.username} :  Mandando o anúncio para ${membercount} membros com o cargo ${role.name}.`)
+        console.log(`Responding to ${message.author.username} :  Sending message to all ${membercount} members of role ${role.name}.`)
         for (var i = 0; i < membercount; i++) {
             let member = memberarray[i];
             if (member.user.bot) {
-                console.log(`Pulando bot com o nick de ${member.user.username}`)
+                console.log(`Skipping bot with name ${member.user.username}`)
                 botcount++;
                 continue
             }
@@ -55,20 +47,24 @@ module.exports = {
             
             await sleep(timeout);
             if(i == (membercount-1)) {
-                console.log(`Esperando ${timeout}ms.\t\\/\tAnunciando para ${member.user.username}`);
+                console.log(`Waited ${timeout}ms.\t\\/\tDMing ${member.user.username}`);
             } else {
-                console.log(`Esperando ${timeout}ms.\t|${i + 1}|\tAnunciando para ${member.user.username}`);
+                console.log(`Waited ${timeout}ms.\t|${i + 1}|\tDMing ${member.user.username}`);
             }
             try {
                 member.send(`${msg} \n #${timeout}`);
                 successcount++;
             } catch (error) {
-                console.log(`--Falha ao enviar anúncio! ` + error)
+                console.log(`--Failed to send DM! ` + error)
             }
         }
-        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` + `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);
-  }    
+        console.log(`Sent ${successcount} ${(successcount != 1 ? `messages` : `message`)} successfully, ` +
+            `${botcount} ${(botcount != 1 ? `bots were` : `bot was`)} skipped.`);
+    }
+module.exports.help = {
+    name: "anunciocargo"
 }
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
