@@ -1,3 +1,5 @@
+// Comando para anunciar um evento no servidor, ou um restart.
+
 const Discord = require('discord.js');
 const commando = require('discord.js-commando');
 
