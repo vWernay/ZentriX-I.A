@@ -1,6 +1,13 @@
 const Discord = require("discord.js");
-exports.run = (client, message, args) => {
-        message.delete();
+module.exports = {
+ //var util = require("../fivem");
+    // Edit the message
+    name: "anunciocargo",
+    aliases: ["anun"],
+    category: "adm",
+    description: "Faz um anúncio com o cargo mencionado, usar quando tiver um evento no server.",
+    usage: "[menção | anuncio]",
+    run: async (client, message, args) => {
     
         let role = message.mentions.roles.first();
         let msg = message.content;
@@ -59,7 +66,8 @@ exports.run = (client, message, args) => {
                 console.log(`--Falha ao enviar anúncio! ` + error)
             }
         }
-        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` + `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);    
+        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` + `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);
+  }    
 }
 
 function sleep(ms) {
