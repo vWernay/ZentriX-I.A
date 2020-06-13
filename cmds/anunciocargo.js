@@ -1,6 +1,18 @@
-const Discord = require("discord.js");
+const commando = require('discord.js-commando');
+const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args) => {
+class DMroleCommand extends commando.Command {
+    constructor(client){
+        super(client, {
+            name: `anunciocargo`,
+            group: 'dms',
+            memberName: 'anunciocargo',
+            description: 'Sends message provided to all members of the specified role.',
+            examples: [ 'anunciocargo @Administrators Hey fellas! This might reach more people than a mass ping...' ]
+        });
+    }
+
+    async run(message, args){
         let role = message.mentions.roles.first();
         let msg = message.content;
         const adminPermissions = new Permissions('ADMINISTRATOR');
@@ -61,11 +73,10 @@ module.exports.run = async (client, message, args) => {
         console.log(`Sent ${successcount} ${(successcount != 1 ? `messages` : `message`)} successfully, ` +
             `${botcount} ${(botcount != 1 ? `bots were` : `bot was`)} skipped.`);
     }
-module.exports.help = {
-    name: "anunciocargo"
 }
-
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+module.exports = DMroleCommand;
