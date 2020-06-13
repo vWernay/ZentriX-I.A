@@ -1,6 +1,6 @@
 {
   "name": "fivem",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "FiveM Bot ",
   "main": "fivem.js",
   "scripts": {
