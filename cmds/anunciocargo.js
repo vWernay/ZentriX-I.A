@@ -3,8 +3,10 @@
 const Discord = require('discord.js');
 const commando = require('discord.js-commando');
 
-exports.run = (client, message, args) => {
-     async run(message, args){
+module.exports = {
+
+  run: function (client, message, args) {
+
         let role = message.mentions.roles.first();
         let msg = message.content;
         const adminPermissions = new Permissions('ADMINISTRATOR');
@@ -62,11 +64,10 @@ exports.run = (client, message, args) => {
                 console.log(`--Falha ao enviar anúncio! ` + error)
             }
         }
-        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` +
-            `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);
-    }
+        console.log(`Anunciei ${successcount} ${(successcount != 1 ? `messages` : `message`)} corretamente, ` + `${botcount} ${(botcount != 1 ? `bots são` : `bot com`)} foram pulados.`);
+  },
     
-};
+}
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
