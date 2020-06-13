@@ -55,7 +55,7 @@ class DMroleCommand extends commando.Command {
                 botcount++;
                 continue
             }
-            let timeout = Math.floor((Math.random() * (config.wait - 0.01)) * 1000) + 10;
+            let timeout = Math.floor((Math.random() * (30 - 0.01)) * 1000) + 10;
             
             await sleep(timeout);
             if(i == (membercount-1)) {
