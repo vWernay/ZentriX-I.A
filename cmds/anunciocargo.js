@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message) => {
-
-        message.delete();
     
         const args = message.content.split(" ");
         const roleArgs = args.slice(0, 1);
@@ -16,5 +14,6 @@ module.exports.run = async (client, message) => {
               {message.guild.members[i].user.send(messageArgs.join(" "))
             }
         }
-   
+
+        message.delete();
 }
