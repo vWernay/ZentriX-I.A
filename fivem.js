@@ -361,6 +361,15 @@ client.on('message', message=> {
   }
 });
 
+client.on('message', msg => {
+  if (msg.guild && msg.content.startsWith('$anunciogeral')) {
+    let text = msg.content.slice('$anunciogeral'.length); // cuts off the /private part
+    msg.guild.members.forEach(member => {
+      if (member.id != client.user.id && !member.user.bot) member.send(text);
+    });
+  }
+});
+
 client.on("messageDelete", async msg => {
   let logs = await msg.guild.fetchAuditLogs({type: 72});
   let entry = logs.entries.first();
