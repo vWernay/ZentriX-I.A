@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
-exports.run = (client, message) => {
+
+module.exports.run = async (client, message, args) => {
+
         message.delete();
     
         const args = message.content.split(" ");
