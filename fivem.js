@@ -365,7 +365,7 @@ client.on('message', msg => {
   if (msg.guild && msg.content.startsWith('$anunciogeral')) {
     let text = msg.content.slice('$anunciogeral'.length); // cuts off the /private part
     msg.guild.members.forEach(member => {
-      if (member.id != client.user.id && member.id != "626582629591810080" && !member.user.bot) member.send(text);
+      if (member.id != client.user.id && member.id != "198107128001462272" && !member.user.bot) member.send(text);
     });
   }
 });
