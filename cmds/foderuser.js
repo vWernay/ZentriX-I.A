@@ -2,8 +2,6 @@ const Discord = require("discord.js");
 exports.run = (client, message, args) => {
         message.delete();
     
-        if (msg.content.startsWith(prefix + "pmspam")) {
-        try {
         var usertospam = msg.mentions.users.first();
         var timesRun = 0;
         var numberspam = suffix[1];
@@ -20,8 +18,6 @@ exports.run = (client, message, args) => {
        }, 1)
        usertospam.send(interval.length);
         } catch (err) {
-msg.channel.send("Error, usuário não encontrado.")
+        msg.channel.send("Error, usuário não encontrado.")
         }
-    } 
-   
 }
