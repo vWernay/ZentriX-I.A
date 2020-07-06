@@ -1,19 +1,17 @@
-module.exports = {
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+exports.run = (client, message, args) => {
+      let user = message.mentions.users.first() || message.author
+      const embed = new Discord.RichEmbed()
+            .setTitle(`🖼️ ${user.tag}`)
+            .setDescription(`**Clique [aqui](${user.displayAvatarURL}) para baixar a imagem!**`)
+            .setImage(user.displayAvatarURL)
+            .setColor('RANDOM')
+    message.channel.send({embed})
+}
+exports.help = {
     name: 'avatar',
-    aliases: ['icon', 'logo'],
-    description: 'display the image and url of users\' avatar',
-    usage: '[tagged users]',
-    execute(client, message, args) {
-        if (!message.mentions.users.size) {
-            return message.channel.send(`Your avatar: ${message.author.displayAvatarURL}`);
-        }
-
-        const avatarList = message.mentions.users.map(user => {
-            return `${user.username}'s avatar: ${user.displayAvatarURL}`;
-        });
-
-        // send the entire array of strings as a message
-        // by default, discord.js will `.join()` the array with `\n`
-        message.channel.send(avatarList);
-    },
+    description: 'Mostra o avatar de um usuário',
+    usage: 'avatar'
 };
