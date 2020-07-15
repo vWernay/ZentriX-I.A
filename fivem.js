@@ -365,9 +365,8 @@ client.on('message', msg => {
   if (msg.guild && msg.content.startsWith('$anunciogeral')) {
     let text = msg.content.slice('$anunciogeral'.length); // cuts off the /private part
     let embed = new Discord.RichEmbed()
-    .setAuthor('**ZentriX RP - Anúncio**', client.user.avatarURL)
+    .setTitle('**ZentriX RP - Anúncio**', client.user.avatarURL)
     .setDescription(`${text}`)
-    .setColor("#7289da")
     .setThumbnail(client.user.avatarURL)
     .setTimestamp()
     .setFooter('Lembrando que você está Ciente de Receber Anúncios do Servidor ZentriX RP, citado nas Regras.')
